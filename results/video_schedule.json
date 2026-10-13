@@ -1,0 +1,57 @@
+[
+  {
+    "name": "collision_2_iter168",
+    "env_id": 62,
+    "start_step": 21092,
+    "end_step": 21484,
+    "length": 392,
+    "start_iteration": 165,
+    "end_iteration": 168,
+    "expected_outcome": "collision",
+    "expected_return": -36.2786
+  },
+  {
+    "name": "collision_1_iter173",
+    "env_id": 2,
+    "start_step": 21492,
+    "end_step": 22130,
+    "length": 638,
+    "start_iteration": 168,
+    "end_iteration": 173,
+    "expected_outcome": "collision",
+    "expected_return": -144.1112
+  },
+  {
+    "name": "timeout_2_iter183",
+    "env_id": 2,
+    "start_step": 22130,
+    "end_step": 23329,
+    "length": 1199,
+    "start_iteration": 173,
+    "end_iteration": 183,
+    "expected_outcome": "timeout",
+    "expected_return": -575.8387
+  },
+  {
+    "name": "timeout_1_iter192",
+    "env_id": 39,
+    "start_step": 23371,
+    "end_step": 24570,
+    "length": 1199,
+    "start_iteration": 183,
+    "end_iteration": 192,
+    "expected_outcome": "timeout",
+    "expected_return": -6.0624
+  },
+  {
+    "name": "goal_1_iter199",
+    "env_id": 15,
+    "start_step": 24638,
+    "end_step": 25451,
+    "length": 813,
+    "start_iteration": 193,
+    "end_iteration": 199,
+    "expected_outcome": "goal",
+    "expected_return": 83.0942
+  }
+]

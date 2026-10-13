@@ -1,0 +1,126 @@
+{
+  "implied_wheel_radius": 0.033876263101895655,
+  "top_speed_at_0.5_cmd": 0.5188652873039246,
+  "checks": [
+    {
+      "check": "observation shape",
+      "passed": true,
+      "detail": "(4, 133)"
+    },
+    {
+      "check": "observation finite",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "goal distance at start",
+      "passed": true,
+      "detail": "obs=3.130 expected=3.130"
+    },
+    {
+      "check": "goal heading at start",
+      "passed": true,
+      "detail": "obs=-0.464 expected=-0.464"
+    },
+    {
+      "check": "lidar back ray",
+      "passed": true,
+      "detail": "ray 0 = 0.500 m, expected ~0.5"
+    },
+    {
+      "check": "lidar front ray",
+      "passed": true,
+      "detail": "ray 180 = 2.000 m, expected ~2.0"
+    },
+    {
+      "check": "lidar left ray",
+      "passed": true,
+      "detail": "ray 270 = 1.900 m, expected ~1.9"
+    },
+    {
+      "check": "lidar right ray",
+      "passed": true,
+      "detail": "ray 90 = 1.900 m, expected ~1.9"
+    },
+    {
+      "check": "lidar sees cylinder",
+      "passed": true,
+      "detail": "rays 227..231 min = 0.694 m, expected ~0.692"
+    },
+    {
+      "check": "120 sectors",
+      "passed": true,
+      "detail": "(4, 120)"
+    },
+    {
+      "check": "start outside proximity zone",
+      "passed": true,
+      "detail": "min=0.500"
+    },
+    {
+      "check": "forward speed (0.3 m/s)",
+      "passed": true,
+      "detail": "measured 0.313 m/s (ratio 1.042)"
+    },
+    {
+      "check": "forward speed (0.5 m/s, max command)",
+      "passed": true,
+      "detail": "measured 0.519 m/s"
+    },
+    {
+      "check": "counter-clockwise turn",
+      "passed": true,
+      "detail": "yaw rate +0.497 rad/s for w=+0.5"
+    },
+    {
+      "check": "clockwise turn",
+      "passed": true,
+      "detail": "yaw rate -0.467 rad/s for w=-0.5"
+    },
+    {
+      "check": "env 0 collides",
+      "passed": true,
+      "detail": "terminal reward -34.96"
+    },
+    {
+      "check": "collision reward",
+      "passed": true,
+      "detail": "expected <= -35 (-30 collision, -5 proximity, small progress)"
+    },
+    {
+      "check": "env 1 reaches goal",
+      "passed": true,
+      "detail": "terminal reward 40.49"
+    },
+    {
+      "check": "goal reward",
+      "passed": true,
+      "detail": "expected > +30 (+30 goal + time bonus)"
+    },
+    {
+      "check": "env 3 times out",
+      "passed": true,
+      "detail": "terminal reward -29.98"
+    },
+    {
+      "check": "timeout reward",
+      "passed": true,
+      "detail": "expected ~ -30"
+    },
+    {
+      "check": "observation noise held for the episode",
+      "passed": true,
+      "detail": "max change between steps 2.38e-07"
+    },
+    {
+      "check": "observation noise scale",
+      "passed": true,
+      "detail": "std of offsets = 0.189 (config 0.2)"
+    },
+    {
+      "check": "heading copies get independent noise",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

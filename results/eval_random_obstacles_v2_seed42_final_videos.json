@@ -1,0 +1,83 @@
+{
+  "checkpoint": "runs/random_obstacles_v2_seed42/nn/last_random_obstacles_v2_ep_1000_rew__46.90704_.pth",
+  "layout": "random",
+  "layout_seed": 1000,
+  "noise": true,
+  "summary": {
+    "episodes": 5,
+    "success_%": 80.0,
+    "collision_%": 20.0,
+    "timeout_%": 0.0,
+    "navigation_time_s (successes)": 5.15,
+    "path_length_m (successes)": 2.4179117381572723,
+    "path_efficiency (successes)": 1.0863052993248759,
+    "min_clearance_m (all)": 0.43510046005249026
+  },
+  "episodes": [
+    {
+      "env_id": 0,
+      "layout_idx": 643,
+      "outcome": "goal",
+      "steps": 230,
+      "time_s": 5.75,
+      "return": 87.3174057006836,
+      "path_length_m": 2.4995052814483643,
+      "start_goal_distance_m": 2.6668193340301514,
+      "path_efficiency": 1.0669388673925246,
+      "min_clearance_m": 0.4340987503528595,
+      "video": "videos/v2/testing/final/test_1_goal.mp4"
+    },
+    {
+      "env_id": 0,
+      "layout_idx": 597,
+      "outcome": "goal",
+      "steps": 132,
+      "time_s": 3.3000000000000003,
+      "return": 80.85922241210938,
+      "path_length_m": 1.855631947517395,
+      "start_goal_distance_m": 2.136178731918335,
+      "path_efficiency": 1.1511866535690316,
+      "min_clearance_m": 0.5005518794059753,
+      "video": "videos/v2/testing/final/test_2_goal.mp4"
+    },
+    {
+      "env_id": 0,
+      "layout_idx": 1656,
+      "outcome": "goal",
+      "steps": 252,
+      "time_s": 6.300000000000001,
+      "return": 91.03056335449219,
+      "path_length_m": 2.6847996711730957,
+      "start_goal_distance_m": 2.9204134941101074,
+      "path_efficiency": 1.0877584370509337,
+      "min_clearance_m": 0.49914005398750305,
+      "video": "videos/v2/testing/final/test_3_goal.mp4"
+    },
+    {
+      "env_id": 0,
+      "layout_idx": 1541,
+      "outcome": "goal",
+      "steps": 210,
+      "time_s": 5.25,
+      "return": 88.7758560180664,
+      "path_length_m": 2.6317100524902344,
+      "start_goal_distance_m": 2.735234260559082,
+      "path_efficiency": 1.0393372392870137,
+      "min_clearance_m": 0.49919790029525757,
+      "video": "videos/v2/testing/final/test_4_goal.mp4"
+    },
+    {
+      "env_id": 0,
+      "layout_idx": 1193,
+      "outcome": "collision",
+      "steps": 592,
+      "time_s": 14.8,
+      "return": -88.03711700439453,
+      "path_length_m": 2.394118309020996,
+      "start_goal_distance_m": 3.069495916366577,
+      "path_efficiency": null,
+      "min_clearance_m": 0.2425137162208557,
+      "video": "videos/v2/testing/final/test_5_collision.mp4"
+    }
+  ]
+}

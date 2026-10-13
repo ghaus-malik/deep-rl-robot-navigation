@@ -1,0 +1,87 @@
+# RL-Games PPO configuration for random obstacles + random goal (new layout every episode).
+# Same network, batch and PPO settings as ppo_static_baseline.yaml, except for three stability changes:
+#   lr_schedule: linear     The adaptive schedule raised the learning rate whenever KL < 0.004 (up to 1e-2);
+#                           in the random-layout run it stayed at 2e-3..4.4e-3 (7-15x the base 3e-4) and
+#                           training degraded after ~300 iterations. Linear decays 3e-4 -> ~0 over max_epochs.
+#   bounds_loss_coef: 0.01  The policy mean drifted outside [-1, 1] (bounds loss ~3 at iteration 400), so the
+#                           clipped actions saturated (full speed / full turn). 100x stronger soft bound.
+#   gamma: 0.995            Effective horizon ~200 steps (5 s) instead of ~100 (2.5 s); episodes last up to
+#                           1200 steps, so goal / timeout rewards far in the future were almost invisible.
+params:
+  seed: 42
+
+  env:
+    clip_observations: .inf
+    clip_actions: 1.0
+
+  algo:
+    name: a2c_continuous
+
+  model:
+    name: continuous_a2c_logstd
+
+  network:
+    name: actor_critic
+    separate: False
+    space:
+      continuous:
+        mu_activation: None
+        sigma_activation: None
+        mu_init:
+          name: default
+        sigma_init:
+          name: const_initializer
+          val: 0
+        fixed_sigma: True
+    mlp:
+      units: [256, 128, 64]
+      activation: elu
+      d2rl: False
+      initializer:
+        name: default
+      regularizer:
+        name: None
+
+  load_checkpoint: False
+  load_path: ''
+
+  config:
+    name: random_obstacles_v2
+    full_experiment_name: random_obstacles_v2
+    env_name: rlgpu
+    device: cuda:0
+    device_name: cuda:0
+    multi_gpu: False
+    ppo: True
+    mixed_precision: False
+    normalize_input: True
+    normalize_value: True
+    value_bootstrap: False
+    num_actors: 64
+    reward_shaper:
+      scale_value: 0.1
+    normalize_advantage: True
+    gamma: 0.995
+    tau: 0.95
+    learning_rate: 3.0e-4
+    lr_schedule: linear       # decays over max_epochs (set by --max_iterations)
+    kl_threshold: 0.008       # only used by the adaptive schedule; kept for reference
+    score_to_win: 20000
+    max_epochs: 1000
+    save_best_after: 50
+    save_frequency: 25
+    grad_norm: 1.0
+    entropy_coef: 0.0
+    truncate_grads: True
+    e_clip: 0.2
+    horizon_length: 128
+    minibatch_size: 4096
+    mini_epochs: 4
+    critic_coef: 2
+    clip_value: True
+    seq_length: 4
+    bounds_loss_coef: 0.01
+
+    player:
+      deterministic: True
+      games_num: 100

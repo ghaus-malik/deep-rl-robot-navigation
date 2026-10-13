@@ -14,7 +14,7 @@ seen during training.
   <em>Deterministic policy on unseen test layouts (top-down view, 2× speed). Green sphere: goal.</em>
 </p>
 
-**Main result.** After 1,000 PPO iterations (8.2 M environment steps, 18 min on a single RTX 5000 Ada), the
+**Main result.** After 1,000 PPO iterations (8.2 M environment steps, 18 min on a single GPU), the
 policy reaches the goal in **85.2 %** of 512 test episodes (95 % Wilson CI 81.8–88.0 %) on 454 unseen random
 layouts, with 14.6 % collisions and 0.2 % timeouts.
 
